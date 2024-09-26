@@ -1,0 +1,130 @@
+<html></html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+    <style>
+        body{
+            margin: 0;
+            border: 0;
+            box-sizing: border-box
+        }
+        .hero{
+            background-color: aquamarine;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container{
+            position: relative;
+            align-items: center;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            background-color: white;
+            width: 25rem;
+            height: 25rem;
+            gap: 10px;
+                padding: 20px 20px;
+                border-radius:10% ;
+        }
+        .password{
+            position: relative;
+            right: 40px;
+            
+        }
+        input{
+            margin: 10px auto;
+            border: 1px solid lightgray;
+        }
+        span{
+            color: #5dd7ae;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(83, 181, 148);
+
+        }
+        #submit{
+            
+            background-color:rgb(83, 181, 148);
+            border: none;
+            padding:10px 20px;
+            border-radius: 10px;
+        }
+        
+        .input{
+            padding: 10px 20px;
+        }
+        .input[name="showPassword"]{
+            cursor: pointer;
+        }
+
+        #submit{
+            cursor: pointer;
+        }
+        input[name="dob"]{
+            padding: 10px 20px;
+            width: 210px;
+            margin: 10px 20px;
+        }
+        input:focus{
+            border: 3px solid rgb(83, 181, 148);;
+            outline: none;
+        }
+
+        .input[type="submit"]:focus{
+            cursor: wait;
+        }
+
+    </style>        
+    <body>
+        <div class="hero">
+            <div class="container">
+                <h2><span>Sign in</span></h2>
+
+                <form method="post" action="http://localhost:3000/signup">
+                    <input class="input" type="email" name="email" placeholder="Email">
+                    <input class="input" type="password" id="pw" name="password" placeholder="Password">
+                    <!-- <input class="input" type="Number" placeholder="Age"> -->
+                     <br>
+                    <input class="input" type="Date" name="dob" placeholder="DOB" >
+                    
+                    <div class="password">
+                        <input type="checkbox" name="showPassword" onclick="myFunction()" >
+                        <label for="showPassword">Show password</label>
+                    </div>
+                    
+                    <br>
+                    <input id="submit" type="submit" value="Sign in">
+                        
+                    
+                </form>
+
+                <!-- <div>
+                    <p>Forget <span> <a href="">Username</a> / <a href="">password</a></span></p>
+                <!-- </div> -->
+                <p>Already have a account ? <a href="http://localhost:3000/login">Log in</a></p> -->
+            </div>
+        </div>
+
+        <script>
+
+                
+
+                function myFunction() {
+                    var x = document.getElementById("pw");
+                    if (x.type === "password") {
+                      x.type = "text";
+                    } else {
+                      x.type = "password";
+                    }
+                  }
+                
+            
+        </script>
+    </body>
+</html>

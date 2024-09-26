@@ -1,0 +1,228 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <style>
+
+        *{
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(83, 181, 148);
+            align-items: center;
+            padding: 30px 30px ;
+            height: 50px;
+        }
+        .header-side{
+            justify-content: flex-start;
+        }
+        .header-side:last-child{
+            justify-content: flex-end;
+        }
+        .header-side:last-child img{
+            width: 40px;
+            height: 40px;
+        }
+
+        nav ul{
+            display: flex;
+            gap: 20px;
+            flex-grow: 1;
+
+
+
+            
+        }
+        ul{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        body{
+            display: grid;
+
+        }
+        section{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container{
+            position: relative;
+            align-items: center;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            background-color:rgb(83, 181, 148); 
+            width: 25rem;
+            color: white;
+            height: 25rem;
+            gap: 10px;
+                padding: 10px 10px;
+                border-radius:10% ;
+        }
+        .closebtn{
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .menu{
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #closebtn{
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @media only screen and (max-width: 768px) {
+            header nav ul{
+                display: absolute;
+                opacity: 0;
+            }
+            .container{
+                padding: 5px 5px;
+                display: block;
+                width: 22rem;
+            }
+            .container p{
+                font-size: 30px;
+            }
+            section h3{
+                font-size: 50px;
+            }
+
+            #nav {
+                height: 100%;
+                width: 0;
+                z-index: 1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                overflow-x: hidden;
+                transition: 1s;
+                padding-top: 60px;
+            }
+
+            #nav a{
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 1s;
+              }
+
+        #nav ul .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+              }
+
+              .menu {
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                
+                
+              }
+              ul{
+                position: absolute;
+              }
+
+              #menu-btn{
+                gap: 3.5px;
+                width: 60px; /* Increase the width */
+                height: 60px; /* Increase the height */
+                font-size: 36px; /* Increase the font size */
+                outline: none;
+                border: none;
+                background-color: rgb(83, 181, 148);
+                color: white; /* Ensure the color contrasts with the background */
+                cursor: pointer;
+                border-radius: 10px; /* Add some rounding to make it visually appealing */
+              }
+             
+              
+              .header-side:first-child{
+                flex-grow: 1;
+              }
+
+
+        }
+        
+    </style>
+    <body>
+        
+        <header>
+            <div class="menu">
+                <button id="menu-btn">&#9776;</button>
+            
+            </div>
+            <div class="header-side">
+                <img src="../images/logo-nn-color.svg" alt="">
+            </div>
+            <nav id="nav">
+                <ul>
+                    <a href="javascript:void(0)" id="closebtn" >&times;</a>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="header-side">
+                <img src="../images/download.png" alt="">
+            </div>
+        </header>
+        <section>
+            <h3>Your Details</h3>
+            <div class="container">
+                
+                <p>Email <%=user%></p>
+                <p>Password</p>
+                <p>DOB</p>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+    <script>
+        const menu_btn=document.getElementById('menu-btn')
+        const nav=document.getElementById('nav')
+        menu_btn.addEventListener('click',()=>{
+            nav.style.width="100%";
+            nav.style.visibility=visible;
+            nav.style.opacity=1;
+        })
+        
+        const close_menu_btn=document.getElementById('closebtn')
+
+        
+        close_menu_btn.addEventListener('click',()=>{
+            nav.style.width="0px";
+            
+        })
+        </script>
+</html>
