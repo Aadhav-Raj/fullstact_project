@@ -2,8 +2,8 @@ const { MongoClient } = require("mongodb");
 
 // Replace the URI string with your MongoDB deployment's connection string.
 
-mongodb link from env as 
-const uri= ""
+//mongodb link from env as 
+//const uri= ""
 
 let coll;
 
