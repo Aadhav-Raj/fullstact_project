@@ -1,4 +1,5 @@
-node js 
-javascript
-html 
-css
+
+*.css linguist-detectable=true
+*.js linguist-detectable=true
+*.node linguist-detectable=true
+*.html linguist-detectable=true
